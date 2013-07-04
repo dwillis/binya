@@ -30,7 +30,7 @@ require 'binya'
 
 results = Binya::Remarks.fetch!
 puts results.first
-<Binya::Remarks:0x007fc5f4996c88 @date=#<Date: 2013-07-02 ((2456476j,0s,0n),+0s,2299161j)>, @time=2013-07-02 17:45:00 -0400, @speaker="Gov. Powell", @type="Speech", @location="The University Club, New York, N.Y.", @title="International Financial Regulatory Reform ", @url="http://www.federalreserve.gov/newsevents/speech/powell20130702a.htm">
+<Binya::Remarks:0x007fc5f4996c88 @date=<Date: 2013-07-02 ((2456476j,0s,0n),+0s,2299161j)>, @time=2013-07-02 17:45:00 -0400, @speaker="Gov. Powell", @type="Speech", @location="The University Club, New York, N.Y.", @title="International Financial Regulatory Reform ", @url="http://www.federalreserve.gov/newsevents/speech/powell20130702a.htm">
 ```
 
 ## Contributing
