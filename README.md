@@ -2,6 +2,8 @@
 
 Binya is a Ruby library for parsing information from Federal Reserve sites. Its initial utility is to parse [a listing of speeches, testimony and other comments](http://www.stlouisfed.org/fomcspeak/date.aspx) by Federal Open Market Committee participants and return Ruby objects.
 
+Binya is named for [Binyamin Applebaum](http://topics.nytimes.com/top/reference/timestopics/people/a/binyamin_appelbaum/index.html), a Washington correspondent for The New York Times.
+
 Binya is tested under Ruby 1.9.3.
 
 ## Installation
