@@ -1,10 +1,11 @@
 require 'yaml'
 require 'open-uri'
+require 'nokogiri'
 module Binya
   
   class Participant
 
-  	attr_accessor :fomc_id, :name, :title, :term_start, :term_end, :rss_url, :img_url
+  	attr_accessor :fomc_id, :name, :title, :term_start, :term_end, :rss_url, :img_url, :latest_remarks
 
   	def initialize(params={})
       params.each_pair do |k,v|
@@ -25,6 +26,10 @@ module Binya
     def self.load_all
     	participants = YAML.load_file('participants.yml')
     	participants.map{|p| Participant.create(p)}
+    end
+
+    def latest_remarks
+
     end
 
 

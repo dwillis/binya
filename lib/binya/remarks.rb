@@ -1,11 +1,12 @@
 require 'open-uri'
 require 'nokogiri'
 require 'american_date'
+require 'typhoeus'
 module Binya
   
   class Remarks
     
-    attr_accessor :date, :time, :speaker, :type, :location, :title, :url, :text
+    attr_accessor :date, :time, :participant, :participant_id, :type, :location, :title, :url, :text
     
     def initialize(params={})
       params.each_pair do |k,v|
@@ -16,14 +17,40 @@ module Binya
     def self.create(params={})
       self.new :date => params[:date],
         :time => params[:time],
-        :speaker => params[:speaker],
+        :participant => params[:participant],
+        :participant_id => params[:participant_id],
         :type => params[:type],
         :location => params[:location],
         :title => params[:title],
         :url => params[:url]
     end
 
-    def self.fetch!
+    def self.latest
+      results = []
+      participants = Participant.load_all
+      hydra = Typhoeus::Hydra.new
+      participants.each do |participant|
+        req = Typhoeus::Request.new(participant.rss_url)
+        req.on_complete do |response|
+          if response.success?
+            doc = Nokogiri::XML(response.body)
+            results << parse_rss(doc, participant)
+          end
+        end
+        hydra.queue(req)
+      end
+      hydra.run
+      results.flatten
+    end
+
+    def self.parse_rss(doc, participant)
+      links = doc.xpath('//item')
+      links.map do |link|
+        Remarks.create({:date => Date.parse(link.xpath('pubDate').text), :participant => participant.name, :participant_id => participant.fomc_id, :title => link.xpath('title').text, :url => link.xpath('link').text})
+      end
+   end
+
+   def self.fetch_html
       results = []
       url = "http://www.stlouisfed.org/fomcspeak/date.aspx"
       doc = Nokogiri::HTML(open(url).read)
@@ -35,8 +62,5 @@ module Binya
       end
       results.map{|r| Remarks.create(r)}
     end
-    
   end
-  
-  
 end
