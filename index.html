@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Binya by dwillis</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Binya</h1>
+          <h2>The Ruby wrapper for the Fed</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/dwillis/binya/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/dwillis/binya/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/dwillis/binya" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="binya" class="anchor" href="#binya"><span class="octicon octicon-link"></span></a>Binya</h1>
+
+<p>Binya is a Ruby library for parsing information from Federal Reserve sites. Its initial utility is to parse <a href="http://www.stlouisfed.org/fomcspeak/date.aspx">a listing of speeches, testimony and other comments</a> by Federal Open Market Committee participants and return Ruby objects. It also provides details about the FOMC participants via a YAML file that can be loaded.</p>
+
+<p>Binya is named for <a href="http://topics.nytimes.com/top/reference/timestopics/people/a/binyamin_appelbaum/index.html">Binyamin Applebaum</a>, a Washington correspondent for The New York Times.</p>
+
+<p>Binya is tested under Ruby 1.9.3.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'binya'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install binya
+</code></pre>
+
+<h2>
+<a name="tests" class="anchor" href="#tests"><span class="octicon octicon-link"></span></a>Tests</h2>
+
+<p>To run the tests, run <code>rake test</code>. Binya uses MiniTest.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'rubygems'</span>
+<span class="nb">require</span> <span class="s1">'binya'</span>
+
+<span class="c1"># scrapes http://www.stlouisfed.org/fomcspeak/date.aspx</span>
+<span class="n">results</span> <span class="o">=</span> <span class="ss">Binya</span><span class="p">:</span><span class="ss">:Remarks</span><span class="o">.</span><span class="n">fetch_html</span>
+<span class="nb">puts</span> <span class="n">results</span><span class="o">.</span><span class="n">first</span>
+<span class="o">&lt;</span><span class="ss">Binya</span><span class="p">:</span><span class="ss">:Remarks</span><span class="p">:</span><span class="mh">0x007fc5f4996c88</span> <span class="vi">@date</span><span class="o">=&lt;</span><span class="ss">Date</span><span class="p">:</span> <span class="mi">2013</span><span class="o">-</span><span class="mo">07</span><span class="o">-</span><span class="mo">02</span> <span class="p">((</span><span class="mi">2456476</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="n">n</span><span class="p">),</span><span class="o">+</span><span class="mi">0</span><span class="n">s</span><span class="p">,</span><span class="mi">2299161</span><span class="n">j</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> <span class="vi">@time</span><span class="o">=</span><span class="mi">2013</span><span class="o">-</span><span class="mo">07</span><span class="o">-</span><span class="mo">02</span> <span class="mi">17</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mo">00</span> <span class="o">-</span><span class="mo">0400</span><span class="p">,</span> <span class="vi">@speaker</span><span class="o">=</span><span class="s2">"Gov. Powell"</span><span class="p">,</span> <span class="vi">@type</span><span class="o">=</span><span class="s2">"Speech"</span><span class="p">,</span> <span class="vi">@location</span><span class="o">=</span><span class="s2">"The University Club, New York, N.Y."</span><span class="p">,</span> <span class="vi">@title</span><span class="o">=</span><span class="s2">"International Financial Regulatory Reform "</span><span class="p">,</span> <span class="vi">@url</span><span class="o">=</span><span class="s2">"http://www.federalreserve.gov/newsevents/speech/powell20130702a.htm"</span><span class="o">&gt;</span>
+
+<span class="c1"># pulls from rss feeds of FOMC participants - this puts type, location and title into a single field</span>
+<span class="n">latest_from_rss</span> <span class="o">=</span> <span class="ss">Binya</span><span class="p">:</span><span class="ss">:Remarks</span><span class="o">.</span><span class="n">latest</span>
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+        </section>
+
+        <footer>
+          Binya is maintained by <a href="https://github.com/dwillis">dwillis</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
