@@ -5,6 +5,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-bernanke-2-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/bernanke_ben.jpg
+  fomc_name: Chairman Bernanke
 - fomcspeak: 3
   name: James Bullard
   title: President, Federal Reserve Bank of St. Louis
@@ -12,6 +13,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-bullard-3-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/bullard.jpg
+  fomc_name: Pres. Bullard
 - fomcspeak: 5
   name: William C. Dudley
   title: President, Federal Reserve Bank of New York
@@ -19,6 +21,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-dudley-5-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/ny_dudley.jpg
+  fomc_name: Pres. Dudley
 - fomcspeak: 6
   name: Elizabeth A. Duke
   title: Governor, Board of Governors
@@ -26,6 +29,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-duke-6-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/duke.jpg
+  fomc_name: Gov. Duke
 - fomcspeak: 7
   name: Charles L. Evans
   title: President, Federal Reserve Bank of Chicago
@@ -33,6 +37,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-evans-7-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/chi_evans.jpg
+  fomc_name: Pres. Evans
 - fomcspeak: 8
   name: Richard W. Fisher
   title: President, Federal Reserve Bank of Dallas
@@ -40,6 +45,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-fisher-8-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/dal_fisher.jpg
+  fomc_name: Pres. Fisher
 - fomcspeak: 9
   name: Thomas Hoenig
   title: President, Federal Reserve Bank of Kansas City
@@ -47,6 +53,7 @@
   term_end: 2011-09-30
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-hoenig-9-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/kc_hoenig.jpg
+  fomc_name: Pres. Hoenig
 - fomcspeak: 10
   name: Narayana Kocherlakota
   title: President, Federal Reserve Bank of Minneapolis
@@ -54,6 +61,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-kocherlakota-10-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/mn_kocherlakota.jpg
+  fomc_name: Pres. Kocherlakota
 - fomcspeak: 11
   name: Jeffrey M. Lacker
   title: President, Federal Reserve Bank of Richmond
@@ -61,6 +69,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-lacker-11-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/rchmnd_lacker.jpg
+  fomc_name: Pres. Lacker
 - fomcspeak: 12
   name: Dennis P. Lockhart
   title: President, Federal Reserve Bank of Atlanta
@@ -68,6 +77,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-lockhart-12-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/atlanta_lockhart.jpg
+  fomc_name: Pres. Lockhart
 - fomcspeak: 13
   name: John F. Moore
   title: Interim President and CEO, Federal Reserve Bank of San Francisco
@@ -75,6 +85,7 @@
   term_end: 2011-03-01
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-moore-13-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/sf_moore.jpg
+  fomc_name: 
 - fomcspeak: 14
   name: Sandra Pianalto
   title: President, Federal Reserve Bank of Cleveland
@@ -82,6 +93,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-pianalto-14-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/cl_pianalto.jpg
+  fomc_name: Pres. Pianalto
 - fomcspeak: 15
   name: Charles I. Plosser
   title: President, Federal Reserve Bank of Philadelphia
@@ -89,6 +101,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-plosser-15-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/phil_plosser.jpg
+  fomc_name: Pres. Plosser
 - fomcspeak: 16
   name: Sarah Bloom Raskin
   title: Governor, Board of Governors
@@ -96,6 +109,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-raskin-16-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/bloom_raskin.jpg
+  fomc_name: Gov. Raskin
 - fomcspeak: 17
   name: Eric S. Rosengren
   title: President, Federal Reserve Bank of Boston
@@ -103,6 +117,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-rosengren-17-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/bos_rosengren.jpg
+  fomc_name: Pres. Rosengren
 - fomcspeak: 18
   name: Daniel K. Tarullo
   title: Governor, Board of Governors
@@ -110,6 +125,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-tarullo-18-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/tarullo.jpg
+  fomc_name: Gov. Tarullo
 - fomcspeak: 19
   name: Kevin M. Warsh
   title: Governor, Board of Governors
@@ -117,6 +133,7 @@
   term_end: 2011-03-31
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-warsh-19-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/warsh.jpg
+  fomc_name: Gov. Warsh
 - fomcspeak: 20
   name: Janet L. Yellen
   title: Vice Chair, Board of Governors
@@ -124,6 +141,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-yellen-20-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/yellen.jpg
+  fomc_name: Vice Chair Yellen
 - fomcspeak: 21
   name: Jeremy C. Stein
   title: Governor, Board of Governors
@@ -131,6 +149,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-stein-21-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/stein_jeremy.jpg
+  fomc_name: Gov. Stein
 - fomcspeak: 22
   name: Jerome H. Powell
   title: Governor, Board of Governors
@@ -138,6 +157,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-powell-22-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/powell_jerome.jpg
+  fomc_name: Gov. Powell
 - fomcspeak: 25
   name: John C. Williams
   title: President, San Francisco
@@ -145,6 +165,7 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-williams-25-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/sf_williams.jpg
+  fomc_name: Pres. Williams
 - fomcspeak: 26
   name: Esther L. George
   title: President, Kansas City
@@ -152,3 +173,4 @@
   term_end: 
   rss_url: http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-george-26-feed.xml
   img_url: http://www.stlouisfed.org/fomcspeak/Participants/esther_george.jpg
+  fomc_name: Pres. George
