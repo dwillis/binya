@@ -68,7 +68,7 @@
 
 <span class="n">participants</span> <span class="o">=</span> <span class="ss">Binya</span><span class="p">:</span><span class="ss">:Participant</span><span class="o">.</span><span class="n">load_all</span>
 <span class="nb">puts</span> <span class="n">participants</span><span class="o">.</span><span class="n">first</span>
-<span class="o">=&gt;</span> <span class="c1">#&lt;Binya::Participant:0x007f987b924e90 @fomc_id=2, @name="Ben S. Bernanke", @title="Chairman, Board of Governors", @term_start=#&lt;Date: 2006-02-01 ((2453768j,0s,0n),+0s,2299161j)&gt;, @term_end=nil, @rss_url="http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-bernanke-2-feed.xml", @img_url="http://www.stlouisfed.org/fomcspeak/Participants/bernanke_ben.jpg", @fomc_name="Chairman Bernanke"&gt;</span>
+<span class="o">=&gt;</span> <span class="o">&lt;</span><span class="ss">Binya</span><span class="p">:</span><span class="ss">:Participant</span><span class="p">:</span><span class="mh">0x007f987b924e90</span> <span class="vi">@fomc_id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="vi">@name</span><span class="o">=</span><span class="s2">"Ben S. Bernanke"</span><span class="p">,</span> <span class="vi">@title</span><span class="o">=</span><span class="s2">"Chairman, Board of Governors"</span><span class="p">,</span> <span class="vi">@term_start</span><span class="o">=</span><span class="c1">#&lt;Date: 2006-02-01 ((2453768j,0s,0n),+0s,2299161j)&gt;, @term_end=nil, @rss_url="http://www.stlouisfed.org/fomcspeak/xml/fomcspeak-bernanke-2-feed.xml", @img_url="http://www.stlouisfed.org/fomcspeak/Participants/bernanke_ben.jpg", @fomc_name="Chairman Bernanke"&gt;</span>
 </pre></div>
 
 <p>The <code>fomc_id</code> corresponds to the number used in FOMC URLs like <a href="http://www.stlouisfed.org/fomcspeak/Participant.aspx?id=2">this one for Ben S. Bernanke</a>. The <code>fomc_name</code> is how each participant appears in the <a href="http://www.stlouisfed.org/fomcspeak/date.aspx">HTML listings of remarks</a>.</p>
@@ -93,7 +93,7 @@
 <span class="c1"># scrapes http://www.stlouisfed.org/fomcspeak/date.aspx</span>
 <span class="n">results</span> <span class="o">=</span> <span class="ss">Binya</span><span class="p">:</span><span class="ss">:Remarks</span><span class="o">.</span><span class="n">fetch_html</span>
 <span class="nb">puts</span> <span class="n">results</span><span class="o">.</span><span class="n">first</span>
-<span class="c1">#&lt;Binya::Remarks:0x007f987b8f2dc8 @date=#&lt;Date: 2013-07-02 ((2456476j,0s,0n),+0s,2299161j)&gt;, @time=2013-07-02 17:45:00 -0400, @participant="Jerome H. Powell", @participant_id=22, @type="Speech", @location="The University Club, New York, N.Y.", @title="International Financial Regulatory Reform ", @url="http://www.federalreserve.gov/newsevents/speech/powell20130702a.htm"&gt;</span>
+<span class="o">=&gt;</span> <span class="o">&lt;</span><span class="ss">Binya</span><span class="p">:</span><span class="ss">:Remarks</span><span class="p">:</span><span class="mh">0x007f987b8f2dc8</span> <span class="vi">@date</span><span class="o">=</span><span class="c1">#&lt;Date: 2013-07-02 ((2456476j,0s,0n),+0s,2299161j)&gt;, @time=2013-07-02 17:45:00 -0400, @participant="Jerome H. Powell", @participant_id=22, @type="Speech", @location="The University Club, New York, N.Y.", @title="International Financial Regulatory Reform ", @url="http://www.federalreserve.gov/newsevents/speech/powell20130702a.htm"&gt;</span>
 </pre></div>
 
 <h2>
