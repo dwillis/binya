@@ -1,7 +1,3 @@
-require 'open-uri'
-require 'nokogiri'
-require 'american_date'
-require 'typhoeus'
 module Binya
   
   class Remarks

@@ -1,6 +1,4 @@
 require 'yaml'
-require 'open-uri'
-require 'nokogiri'
 module Binya
   
   class Participant
@@ -30,7 +28,8 @@ module Binya
     end
 
     def latest_remarks
-
+    	doc = Nokogiri::XML(open(rss_url).read)
+    	Remarks.parse_rss(doc, self)
     end
 
 
