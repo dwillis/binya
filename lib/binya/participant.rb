@@ -5,7 +5,7 @@ module Binya
   
   class Participant
 
-  	attr_accessor :fomc_id, :name, :title, :term_start, :term_end, :rss_url, :img_url, :latest_remarks
+  	attr_accessor :fomc_id, :name, :title, :term_start, :term_end, :rss_url, :img_url, :latest_remarks, :fomc_name
 
   	def initialize(params={})
       params.each_pair do |k,v|
@@ -20,7 +20,8 @@ module Binya
     		:term_start => params["term_start"],
     		:term_end => params["term_end"],
     		:rss_url => params["rss_url"],
-    		:img_url => params["img_url"]
+    		:img_url => params["img_url"],
+    		:fomc_name => params["fomc_name"]
     end
 
     def self.load_all

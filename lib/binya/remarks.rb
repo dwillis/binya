@@ -50,17 +50,35 @@ module Binya
       end
    end
 
-   def self.fetch_html
-      results = []
-      url = "http://www.stlouisfed.org/fomcspeak/date.aspx"
-      doc = Nokogiri::HTML(open(url).read)
-      (doc/:table)[1].children[2..26].each do |row|
+   def self.parse_html(doc, participants)
+    results = []
+    (doc/:table)[1].children[2..26].each do |row|
         date = Date.parse(row.children[0].children[0].text)
         time = row.children[0].children.size == 1 ? nil : Time.parse(row.children[0].children[2].text, date)
-        results << {:date => date, :time => time, :speaker => row.children[1].text, :type => row.children[2].text, 
+        speaker = participants.detect{|p| p.fomc_name == row.children[1].text}
+        results << {:date => date, :time => time, :participant => speaker.name, :participant_id => speaker.fomc_id, :type => row.children[2].text, 
           :location => row.children[3].text.strip, :title => row.children[4].text.strip, :url => row.children[4].children[0]['href']}
-      end
+    end
+    results
+   end
+
+   def self.fetch_html
+      participants = Participant.load_all
+      url = "http://www.stlouisfed.org/fomcspeak/date.aspx"
+      doc = Nokogiri::HTML(open(url).read)
+      results = parse_html(doc, participants)
       results.map{|r| Remarks.create(r)}
+    end
+
+    def self.fetch_previous
+      participants = Participant.load_all
+      results = []
+      files = Dir.entries("previous")[2..-1]
+      files.each do |file|
+        doc = Nokogiri::HTML(open("previous/#{file}").read)
+        results << parse_html(doc, participants)
+      end
+      results.flatten
     end
   end
 end
